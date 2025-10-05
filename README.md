@@ -1,4 +1,4 @@
-# write  a program to find the roots of a quadratic equation
+**write  a program to find the roots of a quadratic equation**
 
 import cmath
 a, b, c = map(float, input("Enter a, b, c: ").split())
@@ -6,7 +6,7 @@ d = cmath.sqrt(b**2 - 4*a*c)
 print(f"Roots: {(-b + d)/(2*a)}, {(-b - d)/(2*a)}")
 
 
-# Write a program to accept a number ‘n’ and a. Check if ’n’ is prime b. Generate all prime numbers till ‘n’ c. Generate first ‘n’ prime numbers This program may be done using functions
+**Write a program to accept a number ‘n’ and a. Check if ’n’ is prime b. Generate all prime numbers till ‘n’ c. Generate first ‘n’ prime numbers This program may be done using functions**
 
 def is_prime(n):
     return n > 1 and all(n % i for i in range(2, int(n**0.5) + 1))
@@ -24,7 +24,7 @@ print("b. Primes till n:", primes_till_n(n))
 print("c. First n primes:", first_n_primes(n))
 
 
-# Write a program to create a pyramid of the character ‘*’ and a reverse pyramid 
+**Write a program to create a pyramid of the character ‘*’ and a reverse pyramid**
 def pyramid(n):
     for i in range(1, n + 1):
         print(' ' * (n - i) + '* ' * i)
@@ -92,7 +92,7 @@ all_removed = text.replace(rem_all, "")
 print("After removing all occurrences:", all_removed)
 
 
-# Write a program to swap the first n characters of two strings.  
+**Write a program to swap the first n characters of two strings.**
 #Input
 s1 = input("Enter first string: ")
 s2 = input("Enter second string: ")
