@@ -1,7 +1,6 @@
 # write  a program to find the roots of a quadratic equation
 
 import cmath
-
 a, b, c = map(float, input("Enter a, b, c: ").split())
 d = cmath.sqrt(b**2 - 4*a*c)
 print(f"Roots: {(-b + d)/(2*a)}, {(-b - d)/(2*a)}")
@@ -11,17 +10,14 @@ print(f"Roots: {(-b + d)/(2*a)}, {(-b - d)/(2*a)}")
 
 def is_prime(n):
     return n > 1 and all(n % i for i in range(2, int(n**0.5) + 1))
-
 def primes_till_n(n):
     return [i for i in range(2, n+1) if is_prime(i)]
-
 def first_n_primes(n):
     primes, num = [], 2
     while len(primes) < n:
         if is_prime(num): primes.append(num)
         num += 1
     return primes
-
 n = int(input("Enter n: "))
 print("a. Prime?", is_prime(n))
 print("b. Primes till n:", primes_till_n(n))
@@ -32,16 +28,12 @@ print("c. First n primes:", first_n_primes(n))
 def pyramid(n):
     for i in range(1, n + 1):
         print(' ' * (n - i) + '* ' * i)
-
 def reverse_pyramid(n):
     for i in range(n, 0, -1):
-        print(' ' * (n - i) + '* ' * i)
-        
+        print(' ' * (n - i) + '* ' * i)  
 rows = int(input("Enter number of rows: "))
-
 print("\nPyramid:")
 pyramid(rows)
-
 print("\nReverse Pyramid:")
 reverse_pyramid(rows)
 
@@ -56,20 +48,16 @@ def digit_to_text(d):
     names = ["ZERO", "ONE", "TWO", "THREE", "FOUR", 
              "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"]
     return names[int(d)]
-
 ch = input("Enter a single character: ")
-
 if ch.isalpha():
     print("It is a letter.")
     if ch.isupper():
         print("It is uppercase.")
     else:
         print("It is lowercase.")
-
 elif ch.isdigit():
     print("It is a numeric digit.")
     print("Digit in words:", digit_to_text(ch))
-
 else:
     print("It is a special character.")
 
@@ -219,7 +207,6 @@ class Point:
     
     def __str__(self):
         return f"Point({self.x}, {self.y})"
-    
     def distance(self, other):
         return math.sqrt((self.x - other.x)**2 + (self.y - other.y)**2)
 
@@ -228,7 +215,6 @@ the values are cubes of the keys.**
 def print_cubes():
     cubes = {i: i**3 for i in range(1, 6)}
     print(cubes)
-
 print_cubes()
 
 
@@ -239,6 +225,44 @@ b. Print another tuple whose values are even numbers in the given tuple.
 c. Concatenate a tuple t2=(11,13,15) with t1.  
 d. Return maximum and minimum value from this tuple**
 
+
+#Given tuple
+t1 = (1, 2, 5, 7, 9, 2, 4, 6, 8, 10)
+
+#a. Print half the values in one line, other half in next line
+mid = len(t1) // 2
+print("First half:", t1[:mid])
+print("Second half:", t1[mid:])
+
+#b. Print another tuple with only even numbers
+even_tuple = tuple(x for x in t1 if x % 2 == 0)
+print("Even numbers tuple:", even_tuple)
+
+#c. Concatenate t1 with t2
+t2 = (11, 13, 15)
+concatenated_tuple = t1 + t2
+print("Concatenated tuple:", concatenated_tuple)
+
+#d. Return maximum and minimum values
+max_value = max(t1)
+min_value = min(t1)
+print("Maximum value:", max_value)
+print("Minimum value:", min_value)
+
+**WAP to accept a name from a user. Raise and handle appropriate exception(s) if the text entered 
+by the user contains digits and/or special characters.**
+# Function to accept valid name
+def get_name():
+    try:
+        name = input("Enter your name: ")
+        if not name.isalpha():
+            # Raise exception if name contains digits or special characters
+            raise ValueError("Name should only contain letters!")
+        print("Valid name entered:", name)
+    except ValueError as ve:
+        print("Error:", ve)
+
+get_name()
 
 
 
